@@ -1,41 +1,15 @@
+# MSSP Client Portal
 
-    # MSSP Client Portal
+Managed Security Services client portal with asset management, SLA tracking, service reporting, and REST API integration.
 
-    > Asset management, SLA tracking, ticketing, reporting, and client-facing API views.
+## Why this project exists
 
-    ## Why this project
+This project demonstrates how a modern MSSP can provide customers with transparent security service delivery through one unified portal. It is designed as a recruiter-friendly portfolio project that combines product thinking, security operations visibility, and platform architecture in a format that is easy to review on GitHub.
 
-    This is the strongest recruiter-facing project for security architecture, consulting, and service delivery leadership roles.
+## Key capabilities
 
-    This repository is designed as a recruiter-friendly portfolio project: a live-demo-first frontend, backed by a documented backend/API skeleton, architecture notes, and realistic sample data.
-
-    ## What is included
-
-    - `app/mssp-client-portal.html` — single-file clickable demo for fast preview
-    - `backend/` — mock API skeleton and route examples
-    - `docs/architecture.md` — architecture and data flow overview
-    - `docs/demo-walkthrough.md` — what a recruiter or hiring manager should click first
-    - `README.md` — concise project context, setup, and roadmap
-
-    ## Demo highlights
-
-    - Client dashboard with SLA widgets
-    - Asset and ticket drilldowns
-    - API documentation starter
-    - Executive reporting section
-
-    ## Run locally
-
-    ```bash
-    cd app
-    python3 -m http.server 8080
-    ```
-
-    Then open `http://localhost:8080/mssp-client-portal.html`.
-
-    ## API skeleton
-
-    - `/api/clients`
-- `/api/assets`
-- `/api/tickets`
-- `/api/sla/status`
+- Asset inventory with ownership, criticality, and monitoring coverage
+- SLA tracking for response and resolution commitments
+- Ticket visibility across incidents, service requests, and escalations
+- Executive and operational reporting views
+- REST API integration layer for future SIEM, CMDB, or ticketing connectors
