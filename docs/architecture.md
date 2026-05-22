@@ -1,27 +1,77 @@
+# MSSP Client Portal Architecture
 
-    # Architecture Overview
+## Objective
 
-    ## Goal
+The MSSP Client Portal is a customer-facing cybersecurity platform concept for managed security services. It is designed to provide transparency across assets, SLA performance, tickets, reporting, and future security integrations in one unified portal.
 
-    MSSP Client Portal is structured to look and feel like a real product that a recruiter, hiring manager, or technical lead can understand quickly.
+## High-level view
 
-    ## Core Layers
+The project is intentionally split into three layers:
 
-    1. Presentation Layer — responsive single-page demo UI for fast exploration.
-    2. Application Layer — orchestration logic for workflows, scoring, correlation, or enrichment.
-    3. Data Layer — represented through mock JSON payloads.
-    4. Integration Layer — documented REST endpoints for future external connections.
+- **Presentation layer** for the customer-facing portal experience
+- **API layer** for service endpoints and integration contracts
+- **Service and data layer** for business logic, reporting, and future persistence
 
-    ## Primary Components
+This structure makes the repository easy to understand for recruiters while still showing a clear path toward a real product implementation.
 
-    - **Asset Management** — Unified inventory for endpoints, cloud assets, identities, and business services.
-- **SLA Tracking** — Visual service commitments with breach risk indicators and escalation windows.
-- **Client Reporting** — Monthly security posture, incident activity, and compliance snapshots.
-- **REST API Layer** — Partner-friendly endpoints for assets, tickets, reports, and service health.
+## Layer overview
 
-    ## Example API Surface
+### 1. Presentation layer
 
-    - `/api/clients`
-- `/api/assets`
-- `/api/tickets`
-- `/api/sla/status`
+The frontend is designed as a lightweight demo that can be reviewed quickly in a browser.
+
+Main goals:
+- Show product thinking and customer workflow design
+- Present portal capabilities without login or setup friction
+- Support quick review by recruiters and hiring managers
+
+Key entry point:
+- `frontend/index.html`
+
+### 2. API layer
+
+The backend is modeled as a FastAPI-style service skeleton.
+
+Main goals:
+- Define a clean future integration surface
+- Separate customer-facing views from service logic
+- Show how the platform can evolve into a production-ready application
+
+Key entry point:
+- `backend/app/main.py`
+
+Representative API areas:
+- Clients
+- Assets
+- Tickets
+- SLA summaries
+- Reporting
+
+### 3. Service and data layer
+
+The service layer is the future location for:
+- business rules
+- SLA calculations
+- report generation
+- tenant separation
+- integration handling
+
+The data layer can later be backed by PostgreSQL or another relational store, with optional background workers for report generation and data sync jobs.
+
+## Suggested module map
+
+```text
+frontend/
+  index.html
+
+backend/
+  app/
+    main.py
+    routes/
+    models/
+    services/
+  tests/
+
+docs/
+  architecture.md
+  roadmap.md
