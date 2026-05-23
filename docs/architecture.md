@@ -62,7 +62,7 @@ The data layer can later be backed by PostgreSQL or another relational store, wi
 
 ```text
 frontend/
-  index.html
+  MSSP_client_portal.html
 
 backend/
   app/
@@ -75,3 +75,4 @@ backend/
 docs/
   architecture.md
   roadmap.md
+  index.html
